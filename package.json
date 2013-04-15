@@ -1,0 +1,28 @@
+{
+  "name": "restify-jsonpoverride",
+  "version": "0.0.1",
+  "description": "restify-jsonpoverride",
+  "main": "lib/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/ullmark/restify-jsonpoverride.git"
+  },
+  "keywords": [
+    "restify",
+    "plugin",
+    "jsonp"
+  ],
+  "author": "Markus Ullmark",
+  "license": "MIT",
+  "readmeFilename": "README.md",
+  "gitHead": "d2923b7b8a147c868bab658490e1ec6c5a985b7f",
+  "devDependencies": {
+    "mocha": "~1.9.0",
+    "chai": "~1.5.0",
+    "grunt": "~0.4.1",
+    "grunt-contrib-jshint": "~0.4.3"
+  }
+}
