@@ -16,7 +16,7 @@ var restify = require('restify'),
 
 var server = restify.createServer();
 // query parser is needed, for the override and therefor must be configured as 
-// a **pre**.
+// a pre. **mapParams** must be set to false due to bug in query parser
 server.pre(restify.queryParser( mapParams: false ));
 server.pre(jsonpMethodOverride());
 server.use(restify.jsonp());
