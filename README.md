@@ -15,9 +15,10 @@ var restify = require('restify'),
     jsonpOverride = require('restify-jsonpoverride');
 
 var server = restify.createServer();
-// query parser is needed, and must be loaded before the override
-server.use(restify.queryParser());
-server.use(jsonpMethodOverride());
+// query parser is needed, for the override and therefor must be configured as 
+// a **pre**.
+server.pre(restify.queryParser( mapParams: false ));
+server.pre(jsonpMethodOverride());
 server.use(restify.jsonp());
 
 // this route is executed on

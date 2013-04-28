@@ -22,8 +22,10 @@
   "devDependencies": {
     "mocha": "~1.9.0",
     "chai": "~1.5.0",
-    "grunt": "~0.4.1",
-    "grunt-contrib-jshint": "~0.4.3",
-    "sinon": "~1.6.0"
+    "sinon": "~1.6.0",
+    "restify": "~2.4.1"
+  },
+  "dependencies": {
+    "underscore": "~1.4.4"
   }
 }
