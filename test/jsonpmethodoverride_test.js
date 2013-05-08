@@ -15,7 +15,8 @@ describe("jsonpMethodOverride", function() {
 
     // create a test server
     this.api = restify.createServer();
-    
+
+    this.api.pre(restify.bodyParser());
     this.api.pre(restify.queryParser({ mapParams: false }));
     this.api.pre(jsonpMethodOverride());
 
@@ -33,8 +34,16 @@ describe("jsonpMethodOverride", function() {
   });
 
   it("handles POST overrides", function(done) {
-    this.client.get("/test?_method=POST&callback=fn", function(err, req, res, data) {
+    var _this = this;
+    this.client.get("/test?_method=POST&callback=fn&something[posted]=55", function(err, req, res, data) {
       if (err) { throw err; }
+      var req = _this.recievedReq;
+      expect(req.method).to.equal("POST");
+      expect(req.params).to.deep.equal({
+        something: {
+          posted: "55"
+        }
+      });
       done();
     });
   });
